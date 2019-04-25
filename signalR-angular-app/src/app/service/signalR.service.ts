@@ -23,7 +23,7 @@ export class SignalRService {
 
     private createConnection() {
         this._hubConnection = new HubConnectionBuilder()
-        .withUrl(window.location.href+'chathub')
+        .withUrl('http://localhost:58283/chatHub')
         .build();
     }
 
