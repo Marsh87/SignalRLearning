@@ -1,36 +1,36 @@
-import { Injectable, EventEmitter } from "@angular/core";
+import { Injectable, EventEmitter } from '@angular/core';
 import { ChatMessage } from '../models/chat-message';
 import { HubConnection, HubConnectionBuilder } from '@aspnet/signalr';
 
 @Injectable()
 export class SignalRService {
-    
+
     messageReceived = new EventEmitter<ChatMessage>();
-    connectionEstablished = new EventEmitter<Boolean>();
+    connectionEstablished = new EventEmitter<boolean>();
 
     private connectionIsEstablished = false;
-    private _hubConnection:HubConnection;
+    private hubConnection: HubConnection;
 
-    constructor(){
+    constructor() {
         this.createConnection();
         this.registerOnServerEvents();
         this.startConnection();
     }
 
-    sendChatMessage(message:ChatMessage){
-        this._hubConnection.invoke('SendMessage', message);
+    sendChatMessage(message: ChatMessage) {
+        this.hubConnection.invoke('SendMessage', message);
     }
 
     private createConnection() {
-        this._hubConnection = new HubConnectionBuilder()
+        this.hubConnection = new HubConnectionBuilder()
         .withUrl('http://localhost:58283/chatHub')
         .build();
     }
 
     private startConnection(): void {
-        this._hubConnection
+        this.hubConnection
         .start()
-        .then(()=> {
+        .then(() => {
             this.connectionIsEstablished = true;
             console.log('Hub connection started');
             this.connectionEstablished.emit(true);
@@ -40,8 +40,8 @@ export class SignalRService {
         });
     }
 
-    private registerOnServerEvents():void {
-        this._hubConnection.on('ReceiveMessage', (data: any) => { 
+    private registerOnServerEvents(): void {
+        this.hubConnection.on('ReceiveMessage', (data: any) => {
             this.messageReceived.emit(data);
         });
     }
