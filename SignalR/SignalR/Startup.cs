@@ -35,7 +35,6 @@ namespace SignalR
                         .AllowAnyHeader()
                         .AllowCredentials());
             });
-     
             services.AddSignalR();
         }
 
@@ -56,6 +55,7 @@ namespace SignalR
             app.UseSignalR(routes =>
             {
                 routes.MapHub<ChatHub>("/chatHub");
+                routes.MapHub<ChartHub>("/chart");
             });
             app.UseMvc();
         }
