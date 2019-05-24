@@ -27,6 +27,5 @@ namespace SignalRAPI.TimerFeatures
                 _timer.Dispose();
             }
         }
-
     }
 }
