@@ -1,5 +1,6 @@
 <ul class="nav nav-tabs">
     <li *ngFor="let tab of tabs" class="nav-item" [ngClass]="{'active': currentRoom==tab.heading}" (click)="OnRoomChange(tab.heading)"><a class="nav-link" data-toggle="tab" href="#home">{{tab.heading}}</a></li>
+    <li><a class="nav-link" routerLink="/charts">Charts</a></li>
 </ul>
 <div class="container pt-5" >
   <div>

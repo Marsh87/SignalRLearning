@@ -1,0 +1,13 @@
+<div class="container pt-4" >
+<div style="display: block" *ngIf='signalRChartService.data'>
+  <canvas baseChart
+          [datasets]="signalRChartService.data"
+          [labels]="chartLabels"
+          [options]="chartOptions"
+          [legend]="chartLegend"
+          [chartType]="chartType"
+          [colors]="colors"
+          (chartClick)="chartClicked($event)"></canvas>
+</div>
+</div>
+

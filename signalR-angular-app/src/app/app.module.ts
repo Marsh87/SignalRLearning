@@ -8,16 +8,23 @@ import { SignalRService } from './service/signalR.service';
 import { HomeComponent } from './home/home.component';
 import { ButtonsModule } from 'ngx-bootstrap';
 
+import { ChartsModule } from 'ng2-charts-x';
+import { HttpClientModule } from '@angular/common/http';
+import { ChartComponent } from './chart/chart.component';
+
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    ChartComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ButtonsModule.forRoot()
+    ButtonsModule.forRoot(),
+    HttpClientModule,
+    ChartsModule
   ],
   providers: [SignalRService],
   bootstrap: [AppComponent]

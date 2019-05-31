@@ -59,7 +59,7 @@ namespace SignalRAPI
             app.UseSignalR(routes =>
             {
                 routes.MapHub<ChatHub>("/chatHub");
-                routes.MapHub<ChartHub>("/chart");
+                routes.MapHub<ChartHub>("/chartHub");
             });
             app.UseMvc();
         }
