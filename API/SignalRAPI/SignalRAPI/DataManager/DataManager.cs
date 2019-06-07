@@ -23,7 +23,7 @@ namespace SignalRAPI.DataManager
             var random = new Random();
             return new List<ChartModel>()
             {
-                new ChartModel {Data = new List<int> {random.Next(1, 40), random.Next(1, 40), random.Next(1, 40), random.Next(1, 40)}, Label = "Data1"},
+                new ChartModel {Data = new List<int> {random.Next(1, 40), random.Next(1, 40), random.Next(1, 40), random.Next(1, 40)}, Label = "Some very important data"},
             };
         }
         private static List<int> CreateChartModelXData()
