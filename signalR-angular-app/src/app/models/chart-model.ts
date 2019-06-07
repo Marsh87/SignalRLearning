@@ -1,4 +1,4 @@
-export interface ChartModel {
+export class ChartModel {
   data: [];
   lable: string;
 }

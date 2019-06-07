@@ -2,12 +2,13 @@
 import { Injectable } from '@angular/core';
 import * as signalR from '@aspnet/signalr';
 import { ChartModel } from '../models/chart-model';
+import { GraphModel } from '../models/graph-model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SignalRChartService {
-  public data: ChartModel[];
+  public data: GraphModel;
 
 private hubConnection: signalR.HubConnection;
 
@@ -24,7 +25,9 @@ private hubConnection: signalR.HubConnection;
 
   public addTransferChartDataListener = () => {
     this.hubConnection.on('transferchartdata', (data) => {
-      this.data = data;
+      this.data = new GraphModel();
+      this.data.yData = data.yData;
+      this.data.xData = data.xData;
     });
   }
 }

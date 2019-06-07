@@ -1,4 +1,4 @@
-<div class="container pt-4" >
+<!-- <div class="container pt-4" >
 <div style="display: block" *ngIf='signalRChartService.data'>
   <canvas baseChart
           [datasets]="signalRChartService.data"
@@ -9,5 +9,22 @@
           [colors]="colors"
           (chartClick)="chartClicked($event)"></canvas>
 </div>
+</div> -->
+<div class="row">
+  <div class="col-md-6">
+    <div style="display: block;" class="chart" *ngIf='signalRChartService.data'>
+      <canvas baseChart width="40" height="40"
+
+              [datasets]="signalRChartService.data.yData"
+              [labels]="signalRChartService.data.xData"
+              [options]="lineChartOptions"
+              [colors]="lineChartColors"
+
+              [legend]="lineChartLegend"
+              [chartType]="lineChartType"
+              (chartHover)="chartHovered($event)"
+              (chartClick)="chartClicked($event)"></canvas>
+    </div>
+  </div>
 </div>
 
