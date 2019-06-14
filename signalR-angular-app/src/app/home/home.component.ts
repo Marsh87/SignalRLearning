@@ -22,7 +22,7 @@ export class HomeComponent {
     this.chatMessage = new ChatMessage();
     this.tabs = [];
     this.tabs.push(new Tab('Lobby', 'Welcome to lobby'));
-    this.tabs.push(new Tab('SingnalR', 'Welcome to SignalR Room'));
+    this.tabs.push(new Tab('SignalR', 'Welcome to SignalR Room'));
     this.currentRoom = 'Lobby';
   }
 

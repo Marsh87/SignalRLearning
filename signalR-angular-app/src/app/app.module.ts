@@ -11,12 +11,14 @@ import { ButtonsModule } from 'ngx-bootstrap';
 import { ChartsModule } from 'ng2-charts-x';
 import { HttpClientModule } from '@angular/common/http';
 import { ChartComponent } from './chart/chart.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ChartComponent
+    ChartComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
